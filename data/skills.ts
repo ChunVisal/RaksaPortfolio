@@ -2,15 +2,33 @@ import type { SkillGroup } from "@/types";
 
 export const skills: SkillGroup[] = [
   {
-    category: "Strategy",
-    skills: ["Digital marketing", "Campaign planning", "Audience research"],
+    category: "Specialties",
+    skills: ["Marketing", "Content Editing", "Branding", "Creativity"],
   },
   {
-    category: "Content",
-    skills: ["Content strategy", "Copywriting", "Short-form video"],
+    category: "Design & production",
+    skills: [
+      "Adobe Photoshop",
+      "Adobe Illustrator",
+      "Adobe InDesign",
+      "Canva",
+      "CapCut",
+      "Blender",
+      "Adobe After Effects",
+      "Photography / Camera",
+      "Pinterest",
+    ],
   },
   {
-    category: "Social",
-    skills: ["Social media", "Community building", "Creative direction"],
+    category: "Office & AI tools",
+    skills: [
+      "Microsoft Word",
+      "Microsoft PowerPoint",
+      "Google Gemini",
+      "Claude",
+      "DeepSeek",
+      "Grok",
+      "ChatGPT",
+    ],
   },
 ];

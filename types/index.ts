@@ -12,6 +12,8 @@ export type Experience = {
   organization: string;
   period: string;
   description: string;
+  image: string;
+  imageAlt: string;
 };
 
 export type Education = {

@@ -1,31 +1,68 @@
+import Image from "next/image";
+
+const services = [
+  "Social Media Management",
+  "Graphic Design & Visual Videography",
+  "Video Editing & Color Grading",
+  "Content Creation",
+  "Marketing Support",
+];
+
 export default function About() {
   return (
-    <section className="bg-surface py-28 max-sm:py-[76px]" id="about">
-      <div className="mx-auto grid w-[calc(100%-64px)] max-w-[1120px] grid-cols-[1fr_0.82fr] gap-[90px] max-md:gap-[45px] max-sm:w-[calc(100%-40px)] max-sm:grid-cols-1 max-sm:gap-[25px]">
+    <section className="bg-surface py-10 sm:py-20" id="about">
+      <div className="mx-auto grid w-[calc(100%-64px)] max-w-[1300px] grid-cols-[0.86fr_1.14fr] items-center gap-[22px] max-md:gap-[45px] max-sm:w-[calc(100%-40px)] max-md:grid-cols-1 max-sm:gap-8">
+       <div className="relative max-md:hidden mx-auto w-full max-w-[390px] max-sm:mb-6 before:absolute before:inset-0 before:translate-x-4 before:translate-y-4 before:rounded-tl-[80px] before:rounded-br-[80px] before:border before:border-orange/50">
+        <Image
+          src="/images/about.png"
+          alt="Raksa in a creative portrait"
+          width={1080}
+          height={1080}
+          sizes="(max-width: 640px) 100vw, 40vw"
+          className="relative aspect-[4/5] w-full rounded-tl-[80px] rounded-br-[80px] bg-[linear-gradient(145deg,#32251e,#191614_68%)] object-cover object-[center_18%]"
+        />
+
+      </div>
+
         <div>
           <p className="m-0 text-[10px] leading-[1.6] font-bold tracking-[0.13em] text-orange uppercase">
             01 / A little about me
           </p>
-          <h2 className="mt-[19px] text-[clamp(36px,4.7vw,58px)] leading-[1.1] font-medium tracking-[-0.065em] max-sm:text-[42px]">
-            Good work starts
-            <br />
-            with <span className="font-serif font-normal tracking-[-0.07em] text-orange italic">good questions.</span>
+          <h2 className="mt-[10px] sm:mt-[19px] text-[clamp(36px,4.7vw,58px)] font-medium leading-[1.05] tracking-[-0.055em] max-sm:text-[42px]">
+            Ideas made to {""}
+            <span className=" font-normal font-[family-name:var(--font-baskerville)] tracking-[-0.03em] text-orange ">
+              connect.
+            </span>
           </h2>
-        </div>
-        <div className="pt-[30px] text-[14px] leading-[1.85] text-copy max-sm:pt-0">
-          <p className="mt-0 mb-4 text-[18px] leading-[1.65] text-ink max-sm:text-[16px]">
-            I bring thoughtful strategy and playful creativity together to make
-            digital experiences feel a little more human.
+          <p className="mt-4 sm:mt-1 mb-4 text-[17px] leading-[1.7] text-ink max-sm:text-[16px]">
+            I&apos;m Raksa, a creative-minded Digital Marketing Specialist with
+            a background in Digital Media Design.
           </p>
-          <p className="mt-0 mb-4">
-            From finding the story at the heart of a brand to shaping the
-            content that brings it to life, I love making ideas clear,
-            compelling, and worth sharing.
+          <p className="m-0 text-[13px] leading-[1.85] text-copy">
+            I specialize in content creation, social media management, graphic
+            design, and video editing. Passionate about branding, visual
+            storytelling, and creative marketing, I turn ideas into engaging
+            content that helps brands build their identity and connect with
+            their audience.
           </p>
-          <div className="mt-7 grid gap-[13px] border-t border-line pt-[21px] text-[12px] font-semibold text-ink">
-            <div className="flex items-center gap-[15px]"><span className="text-[9px] tracking-[0.08em] text-orange">01</span> Curious thinking</div>
-            <div className="flex items-center gap-[15px]"><span className="text-[9px] tracking-[0.08em] text-orange">02</span> Clear storytelling</div>
-            <div className="flex items-center gap-[15px]"><span className="text-[9px] tracking-[0.08em] text-orange">03</span> Meaningful connection</div>
+
+          <div className="mt-8 border-t border-line pt-5">
+            <p className="m-0 mb-4 text-[10px] font-bold tracking-[0.13em] text-muted uppercase">
+              What I can help with
+            </p>
+            <ul className="m-0 grid list-none grid-cols-2 gap-x-6 p-0 max-sm:grid-cols-1">
+              {services.map((service, index) => (
+                <li
+                  className="flex items-start gap-3 border-b border-line py-3 text-[12px] leading-[1.5] font-medium text-ink"
+                  key={service}
+                >
+                  <span className="pt-[1px] text-[9px] tracking-[0.08em] text-orange">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  {service}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>
