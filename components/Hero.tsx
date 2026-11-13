@@ -40,19 +40,22 @@ export default function Hero() {
           </div>
         </div>
       
-          <div className="relative mx-auto w-full max-w-[320px] max-sm:max-w-[320px] max-sm:my-6">
-        
-            <div className="absolute inset-0 translate-x-3 translate-y-3 rotate-3 rounded-[30px] border border-orange/30" />
+          <div className="group relative mx-auto w-full max-w-[320px] max-sm:my-6 max-sm:max-w-[320px]">
+            <div className="absolute inset-0 translate-x-3 translate-y-3 rotate-3 rounded-[30px] border border-orange/30 transition-all duration-500 group-hover:translate-x-5 group-hover:translate-y-5 group-hover:rotate-6 group-hover:border-orange/60" />
 
-            <div className="absolute -bottom-6 -left-6 size-24 bg-[radial-gradient(circle,rgba(255,130,67,0.55)_1.5px,transparent_1.5px)] bg-[length:12px_12px]" />
+            <div className="absolute -bottom-6 -left-6 size-24 bg-[radial-gradient(circle,rgba(255,130,67,0.55)_1.5px,transparent_1.5px)] bg-size-[12px_12px] transition-all duration-500 group-hover:-bottom-8 group-hover:-left-8 group-hover:scale-110" />
 
-            <div className="relative z-[1] overflow-hidden rounded-[30px] border border-line bg-gradient-to-b from-orange/20 to-orange/5">
-              <img src="/images/hero.png" alt="Raksa" className="h-auto w-full" />
+            <div className="relative z-1 overflow-hidden rounded-[30px] border border-line bg-linear-to-b from-orange/20 to-orange/5 shadow-[0_22px_60px_rgba(255,130,67,0.12)] transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-[1.02] group-hover:border-orange/60 group-hover:shadow-[0_30px_80px_rgba(255,130,67,0.2)]">
+              <img
+                src="/images/hero.png"
+                alt="Raksa"
+                className="h-auto w-full transition duration-700 group-hover:scale-105"
+              />
             </div>
 
             <svg
               viewBox="0 0 64 48"
-              className="absolute -top-8 -right-4 z-[3] w-14 rotate-[18deg] drop-shadow-lg"
+              className="absolute -top-8 -right-4 z-3 w-14 rotate-18 drop-shadow-lg transition-all duration-500 group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:rotate-[22deg]"
               aria-hidden="true"
             >
               <path d="M6 40 L2 12 L18 24 L32 6 L46 24 L62 12 L58 40 Z" fill="#ff8243" />
@@ -62,16 +65,18 @@ export default function Hero() {
               <circle cx="62" cy="12" r="3.5" fill="#ffb78f" />
             </svg>
 
-            <span className="absolute top-[20%] -left-6 z-[3] rounded-full border border-line bg-paper px-3 py-1.5 text-[10px] font-semibold tracking-[0.1em] shadow-lg max-sm:-left-10 max-md:-left-20">
+            <span className="absolute top-[20%] -left-6 z-3 rounded-full border border-line bg-paper px-3 py-1.5 text-[10px] font-semibold tracking-widest shadow-lg transition-all duration-500 group-hover:-translate-x-2 group-hover:-translate-y-1 group-hover:border-orange/40 max-sm:-left-10 max-md:-left-20">
               GRAPHIC DESIGN
             </span>
-            <span className="absolute right-[-18px] bottom-[16%] z-[3] rounded-full bg-orange px-3 py-1.5 text-[10px] font-semibold tracking-[0.1em] text-[#17110e] shadow-lg max-sm:right-[-6px]">
+            <span className="absolute -right-4.5 bottom-[16%] z-3 rounded-full bg-orange px-3 py-1.5 text-[10px] font-semibold tracking-widest text-[#17110e] shadow-lg transition-all duration-500 group-hover:translate-x-2 group-hover:-translate-y-1 max-sm:-right-1.5">
               VIDEO EDIT
             </span>
-            <span className="absolute top-2 -left-3 z-[3] text-[22px] text-orange" aria-hidden="true">✦</span>
+            <span className="absolute top-2 -left-3 z-3 text-[22px] text-orange transition-all duration-500 group-hover:scale-125 group-hover:rotate-12" aria-hidden="true">
+              ✦
+            </span>
+          </div>
+
         </div>
-      
-      </div>
 
       <div className="mx-auto flex w-[calc(100%-64px)] max-w-[1120px] justify-between border-t border-line py-[18px] pb-[22px] text-[9px] font-semibold tracking-[0.11em] text-muted max-sm:w-[calc(100%-40px)] max-sm:py-[15px] max-sm:pb-[18px] max-sm:text-[8px]">
         <span className="text-[10px] tracking-[0.25em]">

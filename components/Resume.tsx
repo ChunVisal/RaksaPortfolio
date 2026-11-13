@@ -1,18 +1,6 @@
 import Image from "next/image";
 import { getEducation, getExperience, getSkills } from "@/lib/getData";
 
-function getTemporaryLogoMark(skill: string) {
-  const name = skill.replace(/^(Adobe|Microsoft|Google)\s+/, "");
-  const initials = name
-    .split(/[\s/]+/)
-    .filter(Boolean)
-    .map((word) => word[0])
-    .join("")
-    .slice(0, 2);
-
-  return initials.toUpperCase();
-}
-
 export default function Resume() {
   const experience = getExperience();
   const education = getEducation();
@@ -64,7 +52,7 @@ export default function Resume() {
                       <p className="mt-0 mb-2 text-[10px] font-bold tracking-[0.08em] text-orange uppercase">
                         {item.period}
                       </p>
-                      <h4 className="mt-0 mb-1 text-[14px] leading-[1.4] font-semibold">
+                      <h4 className="mt-0 text-[14px] leading-[1.4] font-semibold">
                         {item.role}
                       </h4>
                       <p className="m-0 text-[13px] leading-[1.7] text-muted">
@@ -119,15 +107,31 @@ export default function Resume() {
                     {group.skills.map((skill) => (
                       <li
                         className="inline-flex items-center gap-2 rounded-full border border-line py-1.5 pr-3 pl-1.5 font-medium text-[11px] leading-[1.3] text-copy"
-                        key={skill}
+                        key={skill.name}
                       >
                         <span
                           aria-hidden="true"
-                          className="flex size-6 shrink-0 items-center justify-center rounded-full border border-orange/35 bg-orange/10 text-[8px] font-bold tracking-[-0.03em] text-orange"
+                          className="flex size-6 shrink-0 items-center justify-center rounded-full border text-[8px] font-bold tracking-[-0.03em]"
+                          style={{
+                            backgroundColor: `${skill.color}1A`,
+                            borderColor: `${skill.color}66`,
+                            color: skill.color,
+                          }}
                         >
-                          {getTemporaryLogoMark(skill)}
+                          {typeof skill.icon === "function" ? (
+                            <skill.icon aria-hidden="true" size={14} />
+                          ) : (
+                            <svg
+                              aria-hidden="true"
+                              className="size-[14px]"
+                              viewBox="0 0 24 24"
+                              fill="currentColor"
+                            >
+                              <path d={skill.icon.path} />
+                            </svg>
+                          )}
                         </span>
-                        {skill}
+                        {skill.name}
                       </li>
                     ))}
                   </ul>

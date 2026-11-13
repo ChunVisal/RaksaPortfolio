@@ -1,3 +1,6 @@
+import type { SimpleIcon } from "simple-icons";
+import type { IconType } from "react-icons";
+
 export type Project = {
   title: string;
   category: string;
@@ -22,7 +25,13 @@ export type Education = {
   period: string;
 };
 
+export type Skill = {
+  name: string;
+  icon: IconType | SimpleIcon;
+  color: string;
+};
+
 export type SkillGroup = {
   category: string;
-  skills: string[];
+  skills: Skill[];
 };
