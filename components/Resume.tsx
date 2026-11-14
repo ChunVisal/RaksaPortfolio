@@ -1,7 +1,15 @@
+"use client";
 import Image from "next/image";
 import { getEducation, getExperience, getSkills } from "@/lib/getData";
 
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+
 export default function Resume() {
+  const [open, setOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState("");
+
   const experience = getExperience();
   const education = getEducation();
   const skills = getSkills();
@@ -33,6 +41,21 @@ export default function Resume() {
               Experience
             </h3>
             <div className="border-l border-line">
+              <Lightbox
+                open={open}
+                close={() => setOpen(false)}
+                slides={selectedImage ? [{ src: selectedImage }] : []}
+                controller={{
+                  closeOnBackdropClick: true,
+                }}
+                styles={{
+                  container: {
+                    backgroundColor: "rgba(0, 0, 0, 0.65)",
+                    backdropFilter: "blur(12px)",
+                    WebkitBackdropFilter: "blur(12px)",
+                  },
+                }}
+              />
               {experience.map((item) => (
                 <article
                   className="relative pb-7 pl-[22px] before:absolute before:top-1 before:left-[-4px] before:size-[7px] before:rounded-full before:border before:border-orange before:bg-paper before:content-['']"
@@ -44,10 +67,14 @@ export default function Resume() {
                         src={item.image}
                         alt={item.imageAlt}
                         fill
+                        onClick={() => {
+                          setSelectedImage(item.image);
+                          setOpen(true);
+                        }}
                         sizes="54px"
-                        className="object-cover"
+                        className="object-cover cursor-pointer"
                       />
-                    </div>
+                  </div>
                     <div>
                       <p className="mt-0 mb-2 text-[11px] font-bold tracking-[0.08em] text-orange uppercase">
                         {item.period}
