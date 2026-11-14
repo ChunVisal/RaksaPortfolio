@@ -38,7 +38,7 @@ export default function About() {
             I&apos;m Raksa, a creative-minded Digital Marketing Specialist with
             a background in Digital Media Design.
           </p>
-          <p className="m-0 text-[13px] leading-[1.85] text-copy">
+          <p className="m-0 text-[13.5px] leading-[1.85] text-copy">
             I specialize in content creation, social media management, graphic
             design, and video editing. Passionate about branding, visual
             storytelling, and creative marketing, I turn ideas into engaging

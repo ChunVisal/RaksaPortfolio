@@ -1,5 +1,5 @@
-import type { SimpleIcon } from "simple-icons";
-import type { IconType } from "react-icons";
+import type { ComponentType } from "react";
+import type { SvgIconProps } from "@thesvg/react";
 
 export type Project = {
   title: string;
@@ -20,14 +20,17 @@ export type Experience = {
 };
 
 export type Education = {
+  school: string;
   program: string;
   institution: string;
   period: string;
+  image: string;
+  imageAlt: string;
 };
 
 export type Skill = {
   name: string;
-  icon: IconType | SimpleIcon;
+  icon: ComponentType<SvgIconProps>;
   color: string;
 };
 

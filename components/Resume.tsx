@@ -39,23 +39,23 @@ export default function Resume() {
                   key={`${item.role}-${item.organization}`}
                 >
                   <div className="flex gap-4">
-                    <div className="relative size-16 shrink-0 overflow-hidden rounded-[3px] bg-surface-raised">
+                    <div className="relative size-17 shrink-0 overflow-hidden rounded-[3px] bg-surface-raised">
                       <Image
                         src={item.image}
                         alt={item.imageAlt}
                         fill
-                        sizes="64px"
+                        sizes="54px"
                         className="object-cover"
                       />
                     </div>
                     <div>
-                      <p className="mt-0 mb-2 text-[10px] font-bold tracking-[0.08em] text-orange uppercase">
+                      <p className="mt-0 mb-2 text-[11px] font-bold tracking-[0.08em] text-orange uppercase">
                         {item.period}
                       </p>
                       <h4 className="mt-0 text-[14px] leading-[1.4] font-semibold">
                         {item.role}
                       </h4>
-                      <p className="m-0 text-[13px] leading-[1.7] text-muted">
+                      <p className="m-0 text-[14px] leading-[1.8] text-gray-300">
                         {item.organization}
                       </p>
                     </div>
@@ -67,7 +67,7 @@ export default function Resume() {
               ))}
             </div>
 
-            <h3 className="mt-9 mb-5 text-[17px] font-semibold tracking-[-0.03em]">
+            <h3 className=" mb-5 text-[17px] font-semibold tracking-[-0.03em]">
               Education
             </h3>
             <div className="border-l border-line">
@@ -76,21 +76,40 @@ export default function Resume() {
                   className="relative pb-6 pl-[22px] before:absolute before:top-1 before:left-[-4px] before:size-[7px] before:rounded-full before:border before:border-orange before:bg-paper before:content-['']"
                   key={`${item.program}-${item.period}`}
                 >
-                  <p className="mt-0 mb-2 text-[10px] font-bold tracking-[0.08em] text-orange uppercase">
-                    {item.period}
-                  </p>
-                  <h4 className="mt-0 mb-[5px] text-[14px] font-semibold">
-                    {item.program}
-                  </h4>
-                  <p className="m-0 text-[13px] leading-[1.7] text-muted">
-                    {item.institution}
-                  </p>
+                  <div className="flex items-start gap-4">
+                    {item.image ? (
+                      <div className="relative size-17 shrink-0 overflow-hidden rounded-[3px] bg-surface-raised">
+                        <Image
+                          src={item.image}
+                          alt={item.imageAlt}
+                          fill
+                          sizes="54px"
+                          className="object-cover"
+                        />
+                      </div>
+                    ) : null}
+
+                    <div>
+                      <p className="mt-0 mb-2 text-[10px] font-bold tracking-[0.08em] text-orange uppercase">
+                        {item.period}
+                      </p>
+                      <h4 className="mt-0 text-[14px] font-semibold">
+                        {item.program}
+                      </h4>
+                      <p className="m-0 text-[14px] leading-[1.8] mb-[10px] text-gray-300">
+                        {item.school}
+                      </p>
+                    </div>
+                  </div>
+                      <p className="m-0 text-[13px] leading-[1.7] text-muted">
+                        {item.institution}
+                      </p>
                 </article>
               ))}
             </div>
           </div>
 
-          <div className="h-fit rounded-[4px] border border-line bg-[radial-gradient(ellipse_at_80%_100%,rgba(255,130,67,0.16),transparent_68%)] p-[30px] max-sm:p-[22px]">
+          <div className="h-fit rounded-[4px] border border-line bg-[radial-gradient(ellipse_at_80%_100%,rgba(255,130,67,0.22),transparent_68%)] p-[30px] max-sm:p-[22px]">
             <p className="m-0 text-[10px] leading-[1.6] font-bold tracking-[0.13em] text-orange uppercase">
               Skills & tools
             </p>
@@ -106,32 +125,20 @@ export default function Resume() {
                   <ul className="m-0 flex list-none flex-wrap gap-[7px] p-0">
                     {group.skills.map((skill) => (
                       <li
-                        className="inline-flex items-center gap-2 rounded-full border border-line py-1.5 pr-3 pl-1.5 font-medium text-[11px] leading-[1.3] text-copy"
+                        className="inline-flex items-center gap-2 rounded-full border border-line py-1 pr-3 pl-1.5 font-medium text-[11px] leading-[1.3] text-copy"
                         key={skill.name}
                       >
                         <span
                           aria-hidden="true"
-                          className="flex size-6 shrink-0 items-center justify-center rounded-full border text-[8px] font-bold tracking-[-0.03em]"
+                          className="flex size-8 items-center justify-center rounded-full text-[8px] font-bold  tracking-[-0.01em]"
                           style={{
-                            backgroundColor: `${skill.color}1A`,
                             borderColor: `${skill.color}66`,
                             color: skill.color,
                           }}
                         >
-                          {typeof skill.icon === "function" ? (
-                            <skill.icon aria-hidden="true" size={14} />
-                          ) : (
-                            <svg
-                              aria-hidden="true"
-                              className="size-[14px]"
-                              viewBox="0 0 24 24"
-                              fill="currentColor"
-                            >
-                              <path d={skill.icon.path} />
-                            </svg>
-                          )}
+                          <skill.icon aria-hidden="true" width={24} height={24} />
                         </span>
-                        {skill.name}
+                        <span>{skill.name}</span>                       
                       </li>
                     ))}
                   </ul>
