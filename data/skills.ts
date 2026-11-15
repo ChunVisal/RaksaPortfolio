@@ -27,6 +27,8 @@ import {
   Megaphone,
   Film,
   Palette,
+  Crown,
+  MessagesSquare,
   Lightbulb, } from 'lucide-react';
 
 export const skills: SkillGroup[] = [
@@ -34,9 +36,11 @@ export const skills: SkillGroup[] = [
     category: "Specialties",
     skills: [
      { name: "Marketing", icon: Megaphone, color: "#F97316" },
-      { name: "Content Editing", icon: Film, color: "#3B82F6" },
-      { name: "Branding", icon: Palette, color: "#A855F7" },
-      { name: "Creativity", icon: Lightbulb, color: "#EC4899" },
+    { name: "Content Editing", icon: Film, color: "#3B82F6" },
+    { name: "Branding", icon: Palette, color: "#A855F7" },
+    { name: "Creativity", icon: Lightbulb, color: "#EC4899" },
+    { name: "Leadership", icon: Crown, color: "#EAB308" },
+    { name: "Communication", icon: MessagesSquare, color: "#14B8A6" },
     ],
   },
   {
