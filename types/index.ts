@@ -2,12 +2,23 @@ import type { ComponentType } from "react";
 import type { SvgIconProps } from "@thesvg/react";
 
 export type Project = {
+  slug: string;
   title: string;
   category: string;
   description: string;
-  year: string;
-  services: string[];
-  visual: "sunrise" | "editorial" | "social";
+  image: string;
+  collections: ProjectCollection[];
+};
+
+export type ProjectCollection = {
+  slug: string;
+  title: string;
+  images: ProjectImage[];
+};
+
+export type ProjectImage = {
+  src: string;
+  alt: string;
 };
 
 export type Experience = {

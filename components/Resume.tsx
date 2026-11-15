@@ -1,10 +1,18 @@
+"use client";
 import Image from "next/image";
 import { getEducation, getExperience, getSkills } from "@/lib/getData";
+
+import { useState } from "react";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
 export default function Resume() {
   const experience = getExperience();
   const education = getEducation();
   const skills = getSkills();
+
+  const [open, setOpen] = useState(false);
+  const [slideIndex, setSlideIndex] = useState(0);
 
   return (
     <section className="bg-paper py-24 max-sm:py-[76px]" id="resume">
@@ -32,8 +40,27 @@ export default function Resume() {
             <h3 className="mt-0 mb-5 text-[17px] font-semibold tracking-[-0.03em]">
               Experience
             </h3>
+            <Lightbox
+              open={open}
+              close={() => setOpen(false)}
+              slides={[...experience, ...education].map((item) => ({
+                src: item.image,
+                alt: item.imageAlt,
+              }))}
+              index={slideIndex}
+              controller={{
+                closeOnBackdropClick: true,
+              }}
+              styles={{
+                container: {
+                  backgroundColor: "rgba(0, 0, 0, 0.65)",
+                  backdropFilter: "blur(12px)",
+                  WebkitBackdropFilter: "blur(12px)",
+                },
+              }}
+            />
             <div className="border-l border-line">
-              {experience.map((item) => (
+              {experience.map((item, index) => (
                 <article
                   className="relative pb-7 pl-[22px] before:absolute before:top-1 before:left-[-4px] before:size-[7px] before:rounded-full before:border before:border-orange before:bg-paper before:content-['']"
                   key={`${item.role}-${item.organization}`}
@@ -45,7 +72,11 @@ export default function Resume() {
                         alt={item.imageAlt}
                         fill
                         sizes="54px"
-                        className="object-cover"
+                        className="object-cover cursor-pointer"
+                        onClick={() => {
+                          setSlideIndex(index);
+                          setOpen(true);
+                        }}
                       />
                     </div>
                     <div>
@@ -71,23 +102,25 @@ export default function Resume() {
               Education
             </h3>
             <div className="border-l border-line">
-              {education.map((item) => (
+              {education.map((item, index) => (
                 <article
                   className="relative pb-6 pl-[22px] before:absolute before:top-1 before:left-[-4px] before:size-[7px] before:rounded-full before:border before:border-orange before:bg-paper before:content-['']"
                   key={`${item.program}-${item.period}`}
                 >
                   <div className="flex items-start gap-4">
-                    {item.image ? (
                       <div className="relative size-17 shrink-0 overflow-hidden rounded-[3px] bg-surface-raised">
                         <Image
                           src={item.image}
                           alt={item.imageAlt}
                           fill
                           sizes="54px"
-                          className="object-cover"
+                          className="object-cover cursor-pointer"
+                          onClick={() => {
+                            setSlideIndex(experience.length + index);
+                            setOpen(true);
+                          }}
                         />
                       </div>
-                    ) : null}
 
                     <div>
                       <p className="mt-0 mb-2 text-[10px] font-bold tracking-[0.08em] text-orange uppercase">

@@ -2,30 +2,111 @@ import type { Project } from "@/types";
 
 export const projects: Project[] = [
   {
-    title: "A brighter kind of everyday",
-    category: "Brand campaign · Sample",
+    slug: "content",
+    title: "Content Creation",
+    category: "Stories & ideas",
     description:
-      "A campaign concept bringing a feel-good product story to life across social, email, and launch-day content.",
-    year: "2025",
-    services: ["Campaign concept", "Content strategy", "Social"],
-    visual: "sunrise",
+      "Interviews, creative ideas, and personal stories made to connect with an audience.",
+    image: "/images/project/contant.png",
+    collections: [
+      {
+        slug: "content-interview",
+        title: "Content Interview",
+        images: [
+          {
+            src: "/images/project/photoshoot.png",
+            alt: "Behind the scenes of a creator filming a beauty video",
+          },
+        ],
+      },
+      {
+        slug: "creative-content",
+        title: "Creative Content Ideas",
+        images: [
+          {
+            src: "/images/hero.png",
+            alt: "Studio portrait used as a creative content concept",
+          },
+        ],
+      },
+      {
+        slug: "personal-content",
+        title: "Personal Content",
+        images: [
+          {
+            src: "/images/about.png",
+            alt: "Personal Raksa Sou portrait artwork",
+          },
+        ],
+      },
+    ],
   },
   {
-    title: "Made for the slow moments",
-    category: "Editorial content · Sample",
+    slug: "graphic-design",
+    title: "Graphic Design",
+    category: "Visual direction",
     description:
-      "An editorial direction and short-form content series designed to make a small lifestyle brand feel more human.",
-    year: "2024",
-    services: ["Creative direction", "Copywriting", "Photography brief"],
-    visual: "editorial",
+      "A collection for skincare poster designs, fashion styles, and visual experiments.",
+    image: "/images/project/graphicdesign.png",
+    collections: [
+      {
+        slug: "skincare-posters",
+        title: "Skincare Poster Design",
+        images: [
+          {
+            src: "/images/about.png",
+            alt: "Bold orange personal-brand poster concept",
+          },
+        ],
+      },
+      {
+        slug: "fashion-styles",
+        title: "Fashion Styles",
+        images: [
+          {
+            src: "/images/hero.png",
+            alt: "Fashion editorial studio portrait",
+          },
+          {
+            src: "/images/project/graphicdesign.png",
+            alt: "Illustrated visual-creator poster design",
+          },
+        ],
+      },
+    ],
   },
   {
-    title: "A little more connection",
-    category: "Social media · Sample",
+    slug: "photoshoot",
+    title: "Photoshoot",
+    category: "Behind the lens",
     description:
-      "A community-first social concept built around useful stories, a consistent voice, and easy-to-share ideas.",
-    year: "2024",
-    services: ["Social strategy", "Content planning", "Community"],
-    visual: "social",
+      "A visual journal of shoot ideas, portraits, and the moments in between.",
+    image: "/images/project/photoshoot.png",
+    collections: [
+      {
+        slug: "shooting-ideas",
+        title: "Shooting Ideas",
+        images: [
+          {
+            src: "/images/project/photoshoot.png",
+            alt: "Creator working on a beauty shoot in the studio",
+          },
+        ],
+      },
+      {
+        slug: "visual-shooting",
+        title: "Visual Shooting",
+        images: [
+          {
+            src: "/images/hero.png",
+            alt: "Fashion portrait from a studio photoshoot",
+          },
+          {
+            src: "/images/about.png",
+            alt: "Creative portrait artwork from a photoshoot concept",
+          },
+        ],
+      },
+    ],
   },
 ];

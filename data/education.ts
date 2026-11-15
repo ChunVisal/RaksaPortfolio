@@ -6,7 +6,7 @@ export const education: Education[] = [
     school: "Build Bright University",
     program: "Bachelor’s Degree in Digital Media Design",
     institution:"Currently Studying Year 3 semester 2 Focused on creative design, photography, video editing, content creation, visual storytelling, and storyboard development.",
-    image: "/images/bbu.png",
+    image: "/images/experience/bbu.png",
     imageAlt: "BBU logo",
   },
   {
@@ -14,7 +14,7 @@ export const education: Education[] = [
     school: "Green Village School",
     program: "High School Diploma Degree",
     institution: "Studied with international volunteer teachers, focusing on real-life education, outside-the-box thinking, communication, problem-solving, and English development.",
-    image: "/images/gvs.png",
+    image: "/images/experience/gvs.png",
     imageAlt: "GVS logo",
   },
 ];
