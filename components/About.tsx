@@ -35,7 +35,7 @@ export default function About() {
             </span>
           </h2>
           <p className="mt-4 sm:mt-1 mb-4 text-[17px] leading-[1.7] text-ink max-sm:text-[16px]">
-            I&apos;m Raksa, a creative-minded Digital Marketing Specialist with
+            I&apos;m Raksa Sou, a creative-minded Digital Marketing Specialist with
             a background in Digital Media Design.
           </p>
           <p className="m-0 text-[13.5px] leading-[1.85] text-copy">
